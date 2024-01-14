@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include<climits>
 using namespace std;
 
 int main(){
@@ -8,15 +9,15 @@ int main(){
     int t; cin >> t;
     while(t--){
         int n; cin >> n;
-        long long mx1 = LLONG_MIN, mx2 = LLONG_MIN;
+        int min1 = INT_MIN, min2 = INT_MIN;
         for(int i=0; i<n; i++){
-            long long t; cin >> t;
-            if(t >= mx1){
-                mx2 = mx1;
-                mx1 = t;
-            }else if(t > mx2)
-                mx2 = t;
+            int t; cin >> t;
+            if(t >= min1){
+                min2 = min1;
+                min1 = t;
+            }else if(t > min2)
+                min2 = t;
         }
-        cout << mx1 + mx2 << endl;
+        cout << min1 + min2 << endl;
     }
 }
